@@ -5,5 +5,7 @@ export default defineNuxtConfig({
     public: {
       tipTapAPPID: 'q9g4nz9g'
     }
-  }
+  },
+
+  modules: ["@nuxt/eslint"]
 })
