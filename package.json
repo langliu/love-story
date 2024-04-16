@@ -12,12 +12,18 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/ui": "^2.15.2",
+    "@supabase/supabase-js": "^2.42.4",
+    "@tiptap/pm": "^2.3.0",
+    "@tiptap/starter-kit": "^2.3.0",
+    "@tiptap/vue-3": "^2.3.0",
     "nuxt": "^3.11.2",
-    "vue": "^3.4.21",
+    "vue": "^3.4.22",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
     "@nuxt/eslint": "^0.3.7",
-    "eslint": "^9.0.0"
+    "eslint": "^9.0.0",
+    "prettier": "3.2.5"
   }
 }

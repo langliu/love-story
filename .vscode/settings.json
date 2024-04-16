@@ -1,6 +1,12 @@
 {
   "cSpell.words": [
-    "Nuxt"
+    "Nuxt",
+    "supabase",
+    "tiptap"
   ],
-  "eslint.experimental.useFlatConfig": true
+  "eslint.experimental.useFlatConfig": true,
+  "tailwindCSS.classAttributes": [
+    "active-class",
+    "inactive-class"
+  ]
 }
