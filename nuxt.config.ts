@@ -7,9 +7,10 @@ export default defineNuxtConfig({
     public: {
       tipTapAPPID: 'q9g4nz9g',
       supabaseUrl: '234',
-      supabaseKey: ''
-    }
+      supabaseKey: '',
+      supabaseStorage: '',
+    },
   },
 
-  modules: ["@nuxt/eslint", "@nuxt/ui"]
+  modules: ['@nuxt/eslint', '@nuxt/ui', '@unocss/nuxt'],
 })

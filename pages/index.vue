@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <p>Index Page</p>
-    <TipTap v-model:model-value="content" />
+  <div class="p-4">
+    <h1 class="text-3xl mb-4">爱的故事</h1>
     <ul>
       <ULink
         v-for="country in countries"
@@ -17,19 +16,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-// import {supabase} from '~/lib/supabaseClient'
-
 const supabase = useSupabase()
-
-const runtimeConfig = useRuntimeConfig()
-console.log(runtimeConfig)
-// const supabase = createClient(
-//   runtimeConfig.public.supabaseUrl,
-//   runtimeConfig.public.supabaseKey
-// )
 const countries = ref<{ title: string; id: string; content: string }[]>([])
 
+/**
+ * 获取故事列表
+ */
 async function getCountries() {
   const { data } = await supabase.from('stories').select()
   countries.value = data ?? []
@@ -38,8 +30,4 @@ async function getCountries() {
 onMounted(() => {
   getCountries()
 })
-
-const content = ref<string>(
-  '<p>A Vue.js wrapper component for tiptap to use <code>v-model</code>.</p>'
-)
 </script>

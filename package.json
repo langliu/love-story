@@ -14,6 +14,7 @@
   "dependencies": {
     "@nuxt/ui": "^2.15.2",
     "@supabase/supabase-js": "^2.42.4",
+    "@tiptap/extension-image": "^2.3.0",
     "@tiptap/pm": "^2.3.0",
     "@tiptap/starter-kit": "^2.3.0",
     "@tiptap/vue-3": "^2.3.0",
@@ -23,7 +24,9 @@
   },
   "devDependencies": {
     "@nuxt/eslint": "^0.3.7",
+    "@unocss/nuxt": "^0.59.3",
     "eslint": "^9.0.0",
-    "prettier": "3.2.5"
+    "prettier": "3.2.5",
+    "unocss": "^0.59.3"
   }
 }
