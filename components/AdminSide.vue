@@ -31,7 +31,7 @@ const pageLinks = [{
 </script>
 
 <template>
-  <UAside :links="links">
+  <UAside :links="links" class="!top-0">
     <template #top>
       <UContentSearchButton/>
     </template>
