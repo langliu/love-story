@@ -51,21 +51,28 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="p-4">
-    <Head>
-      <Title>{{ story?.title }} - 编辑</Title>
-    </Head>
-    <UForm :state="state" class="space-y-4" @submit="onSubmit">
-      <UFormGroup label="标题" name="title">
-        <UInput v-model="state.title"/>
-      </UFormGroup>
+  <NuxtLayout name="admin-default">
+    <div class="p-4">
+      <Head>
+        <Title>{{ story?.title }} - 编辑</Title>
+      </Head>
+      <UPage>
+        <UPageHeader title="编辑详情"/>
+        <UPageBody>
+          <UForm :state="state" class="space-y-4" @submit="onSubmit">
+            <UFormGroup label="标题" name="title">
+              <UInput v-model="state.title"/>
+            </UFormGroup>
 
-      <UFormGroup label="内容" name="content">
-        <!--        <UInput v-model="state.content"  />-->
-        <TipTap v-model:model-value="state.content"/>
-      </UFormGroup>
+            <UFormGroup label="内容" name="content">
+              <TipTap v-model:model-value="state.content"/>
+            </UFormGroup>
 
-      <UButton block type="submit" class="mt font-bold">提交修改</UButton>
-    </UForm>
-  </div>
+            <UButton block type="submit" class="mt font-bold">提交修改</UButton>
+          </UForm>
+        </UPageBody>
+      </UPage>
+
+    </div>
+  </NuxtLayout>
 </template>

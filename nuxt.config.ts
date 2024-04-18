@@ -11,5 +11,6 @@ export default defineNuxtConfig({
             supabaseStorage: '',
         },
     },
-    modules: ['@nuxt/eslint', '@nuxt/ui', '@unocss/nuxt'],
+    modules: ['@nuxt/eslint', '@nuxt/ui', '@unocss/nuxt', '@nuxt/content',],
+    extends: ['@nuxt/ui-pro'],
 })
