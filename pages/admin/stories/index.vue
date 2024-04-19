@@ -17,11 +17,11 @@
               </template>
             </UInput>
 
-            <UButton label="新增故事" trailing-icon="i-heroicons-plus" color="gray" @click="isNewUserModalOpen = true"/>
+            <UButton label="新增故事" trailing-icon="i-heroicons-plus" color="gray" @click="goToCreate"/>
           </template>
         </UDashboardNavbar>
 
-        <UTable :rows="countries" :columns="columns">
+        <UTable :rows="countries" :columns="columns" :loading="loading">
           <template #created_at-data="{ row }">
             <span>{{ dateFormat(row.created_at) }}</span>
           </template>
@@ -47,25 +47,15 @@
 <script setup lang="ts">
 const supabase = useSupabase()
 const countries = ref<{ title: string; id: string; content: string }[]>([])
-const route = useRoute()
 const q = ref('')
 const input = ref<{ input: HTMLInputElement }>()
-const isNewUserModalOpen = ref(false)
+const route = useRouter()
+const loading = ref<boolean>(false)
+
 
 useHead({
   title: '故事管理'
 })
-
-const {data: page} = await useAsyncData(route.path, () => queryContent(route.path).findOne())
-
-const links = [{
-  label: '后台',
-  icon: 'i-heroicons-home',
-  to: '/admin'
-}, {
-  label: '故事管理',
-  icon: 'i-heroicons-book-open'
-}]
 
 const columns = [
   {
@@ -86,12 +76,18 @@ const columns = [
   },
 ]
 
+function goToCreate() {
+  route.push('/admin/stories/create')
+}
+
 /**
  * 获取故事列表
  */
 async function getCountries() {
+  loading.value = true
   const {data} = await supabase.from('stories').select()
   countries.value = data ?? []
+  loading.value = false
 }
 
 onMounted(() => {

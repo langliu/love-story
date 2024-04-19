@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import {z} from 'zod'
 
+const router = useRouter()
+
 const schema = z.object({
   title: z.string(),
   content: z.string()
@@ -8,7 +10,6 @@ const schema = z.object({
 const story = ref<{ title: string; content: string } | null>(null)
 const storyContent = ref<string | undefined>(undefined)
 const route = useRoute()
-const router = useRouter()
 const supabase = useSupabase()
 const toast = useToast()
 
@@ -17,35 +18,17 @@ const state = reactive({
   content: undefined
 })
 
-async function getStory(storeId: string) {
-  const {data: stories} = await supabase
-      .from('stories')
-      .select('*')
-      .eq('id', storeId)
-
-  if (stories?.length) {
-    story.value = stories[0]
-    storyContent.value = stories[0].content
-    state.title = stories[0].title
-    state.content = stories[0].content
-  }
-}
-
 async function onSubmit() {
-  const {error} = await supabase.from('stories').update({
+  const {error} = await supabase.from('stories').insert({
     ...state
   }).eq('id', route.params.id as string).select()
   if (error) {
     alert(error.message)
   } else {
-    toast.add({title: '修改成功'})
+    toast.add({title: '新增成功'})
     router.back()
   }
 }
-
-onMounted(() => {
-  getStory(route.params.id as string)
-})
 </script>
 
 <template>
@@ -53,17 +36,17 @@ onMounted(() => {
     <UDashboardPage>
       <UDashboardPanel grow>
         <Head>
-          <Title>{{ story?.title }} - 编辑</Title>
+          <Title>新增编辑</Title>
         </Head>
 
-        <UDashboardNavbar title="编辑详情">
+        <UDashboardNavbar title="新增故事">
           <template #right>
             <UButton
-                trailing-icon="i-eva-save-outline"
+                trailing-icon="i-heroicons-plus"
                 type="submit"
                 class="font-bold"
                 @click="onSubmit">
-              保存修改
+              提交
             </UButton>
           </template>
         </UDashboardNavbar>

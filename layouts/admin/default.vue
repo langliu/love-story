@@ -12,7 +12,7 @@ const links = [{
 }, {
   id: 'inbox',
   label: '故事管理',
-  icon: 'i-heroicons-inbox',
+  icon: 'i-heroicons-book-open',
   to: '/admin/stories',
   tooltip: {
     text: 'Inbox',
@@ -22,7 +22,7 @@ const links = [{
   id: 'users',
   label: 'Users',
   icon: 'i-heroicons-user-group',
-  to: '/users',
+  to: '/admin/users',
   tooltip: {
     text: 'Users',
     shortcuts: ['G', 'U']

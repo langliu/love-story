@@ -33,10 +33,14 @@ onMounted(() => {
 </template>
 
 <style>
+.story-content p {
+  margin-bottom: 0.5rem;
+}
+
 @media (max-width: 450px) {
   .story-content p {
     font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+
   }
 }
 </style>
