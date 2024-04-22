@@ -14,6 +14,7 @@ export default defineAppConfig({
                     label: '加载中...'
                 }
             }
-        }
+        },
+        primary: 'purple'
     }
 })

@@ -2,7 +2,7 @@
   <NuxtLayout name="admin-default">
     <UDashboardPage>
       <UDashboardPanel grow>
-        <UDashboardNavbar title="故事管理" :badge="countries.length">
+        <DashboardNavbar title="故事管理" :badge="countries.length">
           <template #right>
             <UInput
                 ref="input"
@@ -19,7 +19,7 @@
 
             <UButton label="新增故事" trailing-icon="i-heroicons-plus" color="gray" @click="goToCreate"/>
           </template>
-        </UDashboardNavbar>
+        </DashboardNavbar>
 
         <UTable :rows="countries" :columns="columns" :loading="loading">
           <template #created_at-data="{ row }">

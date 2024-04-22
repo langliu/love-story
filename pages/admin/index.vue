@@ -1,17 +1,11 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <NuxtLayout name="admin-default">
-    <UDashboardPage>
-      <UDashboardPanel grow>
-        <UDashboardNavbar title="仪表盘"/>
-      </UDashboardPanel>
-    </UDashboardPage>
+    <div class="min-h-screen">
+      <DashboardNavbar title="仪表盘" />
+    </div>
   </NuxtLayout>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
