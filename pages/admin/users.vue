@@ -1,17 +1,11 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <NuxtLayout name="admin-default">
-    <UDashboardPage>
-      <UDashboardPanel grow>
-        <UDashboardNavbar title="用户管理"/>
-      </UDashboardPanel>
-    </UDashboardPage>
+    <div class="max-h-screen overflow-y-scroll">
+      <DashboardNavbar title="用户管理" />
+    </div>
   </NuxtLayout>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
