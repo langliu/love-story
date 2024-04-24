@@ -3,7 +3,8 @@
     "Attributify",
     "Nuxt",
     "supabase",
-    "tiptap"
+    "tiptap",
+    "unocss"
   ],
   "eslint.experimental.useFlatConfig": true,
   "tailwindCSS.classAttributes": [

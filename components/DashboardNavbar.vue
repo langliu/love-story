@@ -13,7 +13,7 @@ defineProps({
 
 <template>
   <div
-    class="h-[--header-height] flex-shrink-0 flex items-center border-b border-gray-200 dark:border-gray-800 px-4 gap-x-4 min-w-0 justify-between sticky top-0 z-10 bg-background"
+    class="h-16 flex-shrink-0 flex items-center border-b border-gray-200 dark:border-gray-800 px-4 gap-x-4 min-w-0 justify-between sticky top-0 z-10 bg-white dark:bg-slate-900"
   >
     <div class="gap-1.5 flex items-center">
       <h1 class="font-semibold text-gray-900 dark:text-white">
